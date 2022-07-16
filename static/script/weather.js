@@ -273,6 +273,7 @@ function forecast_location_grid(json_obj) {
     last_up = json_obj[2];
     whole_obj = json_obj[3];
 
+    document.getElementById("date-display").innerHTML = whole_obj["date"]
     document.getElementById("localtime-txt").innerHTML = whole_obj["date"];
     document.getElementById("last_updated-txt").innerHTML = last_up["last_updated"];
     document.getElementById("high_low-txt").innerHTML = `${current_json["mintemp_c"]}°C / ${current_json["maxtemp_c"]}°C`;

@@ -250,7 +250,8 @@ li a:hover {
     align-items: center;
     margin: 0;
     bottom: 1vw;
-    font-size: 1.4vw;
+    font-size: 1vw;
+    font-family: "Verdana";
 }
 
 
@@ -538,7 +539,7 @@ li a:hover {
         padding: 0
     }
     #days-mode h5 {
-        font-size: 1.5em;
+        font-size: 1.1em;
         bottom: 8vw;
     }
     #days-mode-container {
