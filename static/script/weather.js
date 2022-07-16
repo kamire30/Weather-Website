@@ -92,7 +92,7 @@ function get_location() {
 
 
     if (btn_active == "current") {
-        const url = `http://api.weatherapi.com/v1/current.json?key=${key}&q=${document.getElementById("location").value}`;
+        const url = `https://api.weatherapi.com/v1/current.json?key=${key}&q=${document.getElementById("location").value}`;
         let lat;
         let lon;
 
@@ -132,7 +132,7 @@ function get_location() {
     }
     else {
         const days = parseInt(document.getElementById("days-counter").innerHTML) + 1
-        const url = `http://api.weatherapi.com/v1/forecast.json?key=${key}&days=${days}&q=${document.getElementById("location").value}`
+        const url = `https://api.weatherapi.com/v1/forecast.json?key=${key}&days=${days}&q=${document.getElementById("location").value}`
         
         fetch(url)
             .then(res => res.json())
@@ -160,7 +160,7 @@ function get_location() {
 
 function get_air_quality(lat, lon) {
     const key = "1fe4d6fcffb273c22daff0999d14ce8a"
-    const link = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${key}`
+    const link = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${key}`
      
     fetch(link)
         .then(res => res.json())
