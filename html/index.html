@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/stylesheet/weather-top.css"/>
+    <link rel="stylesheet" href="/static/stylesheet/weather-bottom.css" />
+    <script src="/static/script/weather.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="/static/imgs/cloudy-day.png">
+    <title>WeatherTracker</title>
+  </head>
+  <body>
+    <nav>
+        <ul>
+        <li><a>Home</a></li>
+        <li><a href="https://goolnk.com/Pb2oMD">Discord Bot</a></li>
+        <li id="about"><a>About</a></li>
+        </ul>
+    </nav>
+    <div id="whole-page">
+      <div id="top-page">
+        <div class="info-holder" id="weather-info">
+          <h1>Weather</h1>
+          <div class="grid" id="weather-grid">
+            <div class="grid-item" id="g1">
+              <img src="/static/imgs/thermometer.png" alt="Thermometer" />
+              <h3 id="g1t">Temp: --°C</h3>
+            </div>
+            <div class="grid-item" id="g2">
+              <img src="/static/imgs/cartoon-cloud.png" alt="Cloud" />
+              <h3 id="g2t">Prcp: --mm</h3>
+            </div>
+            <div class="grid-item" id="g3">
+              <img src="/static/imgs/water-droplet.png" alt="Water Droplet" />
+              <h3 id="g3t">Humid: --%</h3>
+            </div>
+            <div class="grid-item" id="g4">
+              <img src="/static/imgs/cartoon-sun.png" alt="Sun" />
+              <h3 id="g4t">UVI: --UVI</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-holder" id="air-quality-info">
+          <h1>Air Quality</h1>
+          <div class="grid" id="air-grid">
+            <div class="grid-item2" id="g5">
+              <h3 id="g1a">AQI: --</h3>
+            </div>
+            <div class="grid-item2" id="g6">
+              <h3 id="g2a">CO: --μg/m3</h3>
+            </div>
+            <div class="grid-item2" id="g7">
+              <h3 id="g3a">O3: --μg/m3</h3>
+            </div>
+            <div class="grid-item2" id="g8">
+              <h3 id="g4a">NO2: --μg/m3</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="descriptions">
+        <div id="headings-desc">
+          <h1 id="app-heading"></h1>
+          <div id="tracker-container">
+            <p>
+              The Weather Machine, a program designed to allow users to easily
+              view current weather and air quality of locations. Simply type in
+              a valid location and data will be returned as soon as possible.
+            </p>
+            <form id="location-form">
+              <input
+                type="text"
+                id="location"
+                name="location"
+                placeholder="Search Here..."
+                autocomplete="off"
+              />
+              <button
+                type="button"
+                id="location-submit"
+              >
+                Track <br />Weather
+              </button>
+              <h4 id="enter-something">Enter Something</h4>
+            </form>
+          </div>
+          <div id="viewing-mode">
+            <div class="view-div" id="unit-mode">
+              <h2>Units Mode</h2>
+              <button id="c_or_f" onclick="change_temp_mode()">
+                Metric Mode
+              </button>
+            </div>
+            <div class="view-div" id="weather-mode">
+              <h2>Weather Mode</h2>
+              <div id="weather-mode-container">
+                <button id="current-weather-btn">Current</button>
+                <button id="forecast-weather-btn">Forecast</button>
+              </div>
+            </div>
+            <div class="view-div" id="days-mode">
+              <h2>Days Ahead</h2>
+              <h5 id="date-display">yyyy-mm-dd</h5>
+              <div id="days-mode-container">
+                <button>-1</button>
+                <h3 id="days-counter">2</h4>
+                <button>+1</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="bottom-page">
+        <div id="other-info">
+          <div>
+            <h2>Location</h2>
+            <h5 id="name-txt">--</h5>
+          </div>
+          <div>
+            <h2>Region</h2>
+            <h5 id="region-txt">--</h5>
+          </div>
+          <div>
+            <h2>Country</h2>
+            <h5 id="country-txt">--</h5>
+          </div>
+          <div>
+            <h2>Latitude</h2>
+            <h5 id="lat-txt">--</h5>
+          </div>
+          <div>
+            <h2>Longitude</h2>
+            <h5 id="lon-txt">--</h5>
+          </div>
+          <div>
+            <h2>Date</h2>
+            <h5 id="localtime-txt">--</h5>
+          </div>
+          <div>
+            <h2>Last Updated</h2>
+            <h5 id="last_updated-txt">--</h5>
+          </div>
+          <div>
+            <h2>Conditions</h2>
+            <h5 id="conditions-txt">--</h5>
+          </div>
+          <div>
+            <h2>High/Low</h2>
+            <h5 id="high_low-txt">--</h5>
+          </div>
+          <div>
+            <h2>Day/Night</h2>
+            <h5 id="isday-txt">--</h5>
+          </div>
+          <div>
+            <h2>Gust</h2>
+            <h5 id="gust_kph-txt">--</h5>
+          </div>
+          <div>
+            <h2>Pressure</h2>
+            <h5 id="pressure_mb-txt">--</h5>
+          </div>
+          <div>
+            <h2>Visibility</h2>
+            <h5 id="vis_km-txt">--</h5>
+          </div>
+          <div>
+            <h2>Wind Speeds</h2>
+            <h5 id="wind_kph-txt">--</h5>
+          </div>
+          <div>
+            <h2>Wind Direction</h2>
+            <h5 id="wind_degree-txt">--</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

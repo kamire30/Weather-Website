@@ -1,0 +1,604 @@
+/* Body */
+
+body {
+    background: url('/static/imgs/sky_background.jpg') no-repeat center fixed;
+    background-size: cover;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Whole Page and Navigation */
+
+#whole-page {
+    position: relative;
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: auto auto;
+}
+ul {
+    z-index: 100;
+    position: fixed;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    width: 120vw;
+    background-color: #0c0c0c;
+  }
+li {
+    display: inline;
+    float: left;
+}
+li a:visited { 
+    color: #FFFFFF; 
+}
+li a {
+    background-color: #0c0c0c;
+    color: #FFFFFF;
+    display: block;
+    padding: 14px 16px;
+    font-family: Verdana;
+    text-decoration: none;
+    transition-duration: 0.5s;
+    text-align: center;
+}
+li a:hover {
+    background-color: #a1d3fc;
+    color: #000000;
+    cursor: pointer;
+}
+
+
+/* Descriptions And Inputs */
+
+#descriptions {
+    margin-top: 5vw;
+    width: 30vw;
+    margin-left: 6vw;
+}
+#headings-desc {
+    position: relative;
+    width: 30vw;
+}
+#top-page {
+    position: relative;
+    margin-left: 7vw;
+    margin-top: 7vw;
+    margin-right: 4vw;
+}
+#app-heading {
+    position: relative;
+    white-space: nowrap;
+    font-size: 3.5vw;
+    font-family:'Arial';
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+#descriptions p {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    font-family:'Calibri';
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 5px;
+    padding: 2vh 2vh 2vh 2vh;
+    top: -4vh;
+}
+#tracker-container {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    background-color:rgb(138, 230, 247);
+    width: 40.5vw;
+    height: 40vh;
+    padding-top: 1vw;
+    border-radius: 5px;
+    right: 5vw;
+    margin-bottom: 1vw;
+}
+#location-form {
+    position: relative;
+    left: 6vw;
+    bottom: 3vw;
+    background-color:rgb(187, 146, 236);
+    max-width: 26vw;
+    width: 26vw;
+    height: 15vh;
+    padding-left: 2vw;
+    padding-top: 2vh;
+    border-radius: 3px;
+}
+#location-lbl {
+    position: relative;
+    font-family: 'Trebuchet MS';
+    font-size: 2vw;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.19);
+}
+#location {
+    width: 13vw;
+    padding: 6px 10px;
+    font-family: 'Trebuchet MS';
+    background-image: url('/static/imgs/search-icon.png');
+    background-position: 0.5vw 0.5vh;
+    background-repeat: no-repeat;
+    border-radius: 3px;
+    border: solid thin black;
+    padding-left: 3vw;
+    transition: width 0.4s ease-in-out;
+}
+#location:focus {
+    width: 20vw;
+}
+#location-submit {
+    position: relative;
+    width: 10vw;
+    top: 2vh;
+    background-color:rgb(242, 190, 245);
+    cursor: pointer;
+    padding: 2px 2px 2px 2px;
+    border-radius: 3px;
+    border: solid thin;
+    transition-duration: 0.5s;
+    font-family: 'Verdana';
+}
+#location-form h4 {
+    position: relative;
+    font-family: 'Trebuchet MS';
+    float: right;
+    left: -4vw;
+}
+#location-submit:hover {
+    background-color:rgb(186, 238, 247);
+}
+#viewing-mode {
+    position: relative;
+    display: grid;
+    grid-template-columns: 13vw 13vw 13vw;
+    background-color:#034609;
+    height: 10vw;
+    left: -5vw;
+    width: 39.5vw;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+}
+#unit-mode, #weather-mode, #days-mode {
+    width: 13vw;
+    height: 8vw;
+    background-color: #b0ffdf;
+    border: solid thin black;
+}
+#weather-mode-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+#weather-mode-container button {
+    height: 2vw;
+    width: 6vw;
+    border-radius: 5px;
+}
+#current-weather-btn {
+    margin-right: 0.5vw;
+    background-color:#1ff39e;
+}
+#forecast-weather-btn {
+    background-color: lightgray;
+}
+#viewing-mode div h2 {
+    color: #000000;
+    text-align: center;
+    font-family: 'Trebuchet MS';
+    font-size: 1.7vw;
+}
+#c_or_f {
+    position: absolute;
+    font-family: 'Trebuchet MS';
+    background-color:rgb(119, 240, 191);
+    border-radius: 3px;
+    border: none;
+    min-width: 8vw;
+    font-size: 1vw;
+    padding: 0.5vw 0.5vw 0.5vw 0.5vw;
+    left: 3vw;
+    transition: 0.5s;
+}
+#c_or_f:hover {
+    cursor: pointer;
+    background-color:rgb(152, 244, 207);
+}
+#viewing-mode div h4 {
+    font-size: 1.3vw;
+    text-align: center;
+    font-family: 'Trebuchet MS';
+}
+#days-mode-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 1.75vw;
+}
+#days-mode-container h3 {
+    font-family: 'Trebuchet MS';
+    font-size: 0.9em;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    border-radius: 3px;
+    background-color: rgb(119, 240, 191);
+}
+#days-mode-container button {
+    background-color: rgb(49, 229, 157);
+    border: 0;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+#days-mode h5 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    bottom: 1vw;
+    font-size: 1.4vw;
+}
+
+
+/* Info Holders */
+
+.info-holder {
+    --left-position: 0vw;
+    position: relative;
+    background-color:#48d1cc;
+    width: 35vw;
+    min-width: 200px;
+    height: 30vh;
+    min-height: 38vh;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition-duration: 0.5s;
+    align-items: center;
+}
+.info-holder:hover {
+    --left-position: 2vw;
+    width: 38vw;
+    height: 40px;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.2), 0 7px 21px 0 rgba(0, 0, 0, 0.19);
+    background-color: #6cebe6;
+}
+.info-holder h1 {
+    position: relative;
+    text-align: center;
+    margin-top: 2vh;
+    font-size: 6vh;
+    font-family:'Trebuchet MS';
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.19);
+}
+#weather-info {
+    margin-left: 3vw;
+    margin-top: 2vh;
+    background-image: url('/static/imgs/night-sky.webp');
+}
+#air-quality-info {
+    margin-top: 2vh;
+    margin-left: 3vw;
+    margin-bottom: 2vh;
+    background-image: url('/static/imgs/sunset-sky.gif');
+}
+.grid {
+    position: relative;
+    display: grid;
+    row-gap: 7vh;
+    column-gap: 17vw;
+    grid-template-rows: 3vw 5vh;
+    grid-template-columns: 3px 3px;
+    left: 1.5vw;
+    width: 30vw;
+    border-radius: 4px;
+}
+.grid-item {
+    position: relative;
+    width: 15vw;
+    height: 10vh;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.2), 0 7px 21px 0 rgba(0, 0, 0, 0.19);
+    transition-duration: 0.5s;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.grid-item2 {
+    position: relative;
+    width: 15vw;
+    height: 10vh;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.2), 0 7px 21px 0 rgba(0, 0, 0, 0.19);
+    transition-duration: 0.5s;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+#g1 {
+    background-color: #f3c86b;
+}
+#g1 img {
+    position: relative;
+    width: auto;
+    max-width: 5vw;
+    height: auto;
+    max-height: 7vh;
+    float: left;
+    left: -1vw;
+}
+#g1 h3 {
+    position: relative;
+    float: left;
+    font-family:'Trebuchet MS';
+    font-size: 1.5vw;
+}
+#g2 {
+    left: var(--left-position);
+    transition-duration: 0.5s;
+    background-color: #a1c9c7;
+    float: left;
+}
+#g2 img {
+    position: relative;
+    width: auto;
+    max-width: 5vw;
+    height: auto;
+    max-height: 4vh;
+    float: left;
+    left: -0.5vw;
+}
+#g2 h3 {
+    position: relative;
+    float: left;
+    font-family:'Trebuchet MS';
+    font-size: 1.5vw;
+    left: 0.5vw;
+}
+#g3 {
+    background-color: #5cbdf5;
+    overflow: hidden;
+    left: 0vw;
+}
+#g3 img {
+    position: relative;
+    max-width: 2vw;
+    width: auto;
+    max-height: 6vh;
+    height: auto;
+    float: left;
+    margin-right: 1.5vw;
+    left: -0.03vw;
+}
+#g3 h3 {
+    position: relative;
+    float: left;
+    font-family:'Trebuchet MS';
+    font-size: 1.5vw;
+}
+#g4 {
+    background-color: #f08a38;
+    overflow: hidden;
+    left: var(--left-position);
+    transition-duration: 0.5s;
+}
+#g4 img {
+    position: relative;
+    max-width: 6vw;
+    width: auto;
+    max-height: 6vh;
+    height: auto;
+    float: left;
+    margin-right: 1.5vw;
+    left: -0.03vw;
+}
+#g4 h3 {
+    position: relative;
+    float: left;
+    font-family:'Trebuchet MS';
+    font-size: 1.5vw;
+}
+#g5, #g6, #g7, #g8 {
+    font-family: 'Trebuchet MS';
+}
+#g5 {
+    background-color:rgb(200, 165, 228);
+}
+#g6 {
+    left: var(--left-position);
+    background-color:rgb(164, 240, 164);
+}
+#g7 {
+    background-color:rgb(223, 199, 152);
+}
+#g8 {
+    left: var(--left-position);
+    background-color:#bafbfb;
+}
+
+
+/* Media Queries */
+
+@media only screen and (max-width: 915px) {
+    #whole-page {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: 100vw; 
+    }
+    #descriptions {
+        width: 98vw;
+        order: -1;
+        margin-left: 0;
+        margin-top: 10vw;
+    }
+    #headings-desc {
+        width: 100vw;
+    }
+    #app-heading {
+        font-size: 10vw;
+        margin-bottom: 5vw;
+    }
+    #tracker-container {
+        position: relative;
+        width: 85vw;
+        padding-bottom: 2vw;
+        height: 55vw;
+        margin-left: 13vw;
+        margin-bottom: 3vw;
+        right: 5vw;
+    }
+    #headings-desc p {
+        font-size: 4vw;
+        padding: 1vw;
+        margin-top: 8vw;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    #location-form {
+        max-width: 70vw;
+        width: 75vw;
+        height: 20vw;
+        margin-right: 10vw;
+    }
+    #location {
+        width: 40vw;
+        height: 4vw;
+        font-size: 3vw;
+        transition: width 0.5s ease-in-out;
+        padding-left: 6vw;
+        background-size: 5vw;
+        float: left;
+        margin: 0;
+    }
+    #location:focus {
+        width: 58vw;
+    }
+    #location-submit {
+        font-size: 3vw;
+        text-align: center;
+        width: 40vw;
+        height: 10vw;
+        padding: 1vw 4vw 1vw 4vw;
+        top: 1vw;
+        margin-top: 0;
+    }
+    #enter-something {
+        font-size: 3vw;
+    }
+    #viewing-mode {
+        display: flex;
+        width: 90%;
+        height: 30vw;
+        margin-left: 9vw;
+        padding: 1.5vw 1.5vw 1.5vw 1.5vw;
+    }
+    #unit-mode, #weather-mode, #days-mode {
+        width: inherit;
+        height: inherit;
+    }
+    .view-div {
+        font-size: 3vw;
+    }
+    #viewing-mode div h2 {
+        position: relative;
+        bottom: 5vw;
+        font-size: 2em;
+    }
+    #c_or_f {
+        font-size: 1.5em;
+        width: 25vw;
+        bottom: 4vw;
+        margin-left: 1vw;
+    }
+    #weather-mode-container {
+        position: relative;
+        bottom: 5vw;
+    }
+    #weather-mode-container button {
+        width: 13vw;
+        height: 5vw;
+        font-size: 0.9em;
+        text-align: center;
+        padding: 0
+    }
+    #days-mode h5 {
+        font-size: 1.5em;
+        bottom: 8vw;
+    }
+    #days-mode-container {
+        font-size: 5vw;
+        bottom: 11vw;
+    }
+    #days-mode-container button {
+        font-size: 0.8em;
+        width: 8vw;
+    }
+    #days-mode-container h3 {
+        font-size: 1em;
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+
+
+    #top-page {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        width: 98vw;
+        margin-left: 1vw;
+        order: 0;
+    }
+    .info-holder {
+        display: grid;
+        grid-template-rows: 20% 80%;
+        width: 95vw;
+        right: 1.5vw;
+    }
+    .info-holder:hover {
+        width: 95vw;
+    }
+    .grid-item {
+        width: 40vw;
+    }
+    .grid-item h3 {
+        text-align: center;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        margin: 1vw 3vw 1vw 3vw;
+        column-gap: 6vw;
+    }
+    #weather-grid img {
+        display: none;
+    }
+    #weather-grid h3 {
+        font-size: 3vh;
+    }
+    #air-grid h3 {
+        font-size: 3vh;
+    }
+    .grid-item2 {
+        width: 40vw;
+    }
+    #g3, #g4, #g7, #g8 {
+        bottom: 4vw;
+    }
+}

@@ -1,0 +1,58 @@
+
+
+/* Advanced Info Grid */
+
+#bottom-page {
+    position: relative;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+#other-info {
+    position: relative;
+    display: grid;
+    background-color: #1b1b1b;
+    width: 81vw;
+    margin-bottom: 3vw;
+    margin-top: 3vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+#other-info div {
+    border: solid thin white;
+    width: 16vw;
+    background-color: #1b1b1b;
+}
+#other-info div h2 {
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'Trebuchet MS';
+}
+#other-info div h5 {
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'Verdana';
+}
+
+
+/* Media Queries */
+
+@media only screen and (max-width: 915px) {
+    #other-info {
+        width: 95vw;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto;
+    }
+    #other-info div {
+        width: 23.2vw;
+        font-size: 5vw;
+    }
+    #other-info div h2 {
+        font-size: 0.9em;
+    }
+    #other-info div h5 {
+        font-size: 0.6em;
+    }
+   
+}
