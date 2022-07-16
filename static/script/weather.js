@@ -1,6 +1,8 @@
 document.getElementById("current-weather-btn").addEventListener("click", function(){current_forecast("forecast")});
 document.getElementById("forecast-weather-btn").addEventListener("click", function(){current_forecast("current")});
 document.getElementById("location-submit").addEventListener("click", function(){get_location("current")});
+document.getElementById("minus-1").addEventListener("click", function(){forecast_day_minus()});
+document.getElementById("plus-1").addEventListener("click", function(){forecast_day_add()});
 
 var index = 0;
 var time = 100;
@@ -10,6 +12,26 @@ function type_heading() {
         document.getElementById("app-heading").innerHTML += text.charAt(index);
         index++;
         setTimeout(type_heading, time);
+    }
+}
+
+function forecast_day_minus() {
+    var days_ahead = parseInt(document.getElementById("days-counter").innerHTML);
+
+    if (days_ahead != 0) {
+        days_ahead -= 1;
+        document.getElementById("days-counter").innerHTML = days_ahead;
+        get_location();
+    }
+}
+
+function forecast_day_add() {
+    var days_ahead = parseInt(document.getElementById("days-counter").innerHTML);
+
+    if (days_ahead != 2) {
+        days_ahead += 1;
+        document.getElementById("days-counter").innerHTML = days_ahead;
+        get_location();
     }
 }
 
@@ -177,7 +199,6 @@ function location_grid(json_obj) {
     current_json = json_obj[1];
 
     document.getElementById("high_low-txt").innerHTML = "--"
-    console.log(String(current_json["localtime"]))
     document.getElementById("date-display").innerHTML = String(location_json["localtime"]).substring(0, 10);
 
     for (const [counter, component] of comp_list.entries()) {
