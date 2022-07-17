@@ -2,7 +2,7 @@ const axios = require('axios');
 
 const handler = async (event) => {
   const location = event.queryStringParameters.location;
-  const API_KEY = "1a9bcc3b53b248b486d24649223006";
+  const API_KEY = process.env.WEATHER_KEY;
   const url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${location}`;
 
   try {
