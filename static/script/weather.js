@@ -64,7 +64,7 @@ function change_temp_mode() {
     } else {
         const new_temp = cur_temp;
         temp_button.innerHTML = "Metric Mode";
-        temp_display.innerHTML = `Temp: ${new_temp}`;  
+        temp_display.innerHTML = `Temp: ${new_temp}°C`;  
         gust_display.innerHTML = `${kph_gust}kph`;
         vis_display.innerHTML = `${km_vis}km`
         wind_display.innerHTML = `${kph_wind}kph`
@@ -115,7 +115,7 @@ function get_location() {
                 lat = data["location"]["lat"];
                 lon = data["location"]["lon"];
                 const current_temp = `${Math.round(data["current"]["temp_c"])}°C`;
-                cur_temp = current_temp
+                cur_temp = Math.round(data["current"]["temp_c"])
                 const humidity = `${data["current"]["humidity"]}%`;
                 const precip = `${data["current"]["precip_mm"]}mm`;
                 const uv = `${data["current"]["uv"]}`;
@@ -141,10 +141,11 @@ function get_location() {
             })
             .then(json_obj => {
                 data = json_obj["forecast"]["forecastday"][days-1]["day"];
-                const avg_temp = data["avgtemp_c"]
-                const chance_rain = data["daily_chance_of_rain"]
-                const avg_humidity = data["avghumidity"]
-                const uv = data["uv"]
+                const avg_temp = data["avgtemp_c"];
+                cur_temp = Math.round(avg_temp);
+                const chance_rain = data["daily_chance_of_rain"];
+                const avg_humidity = data["avghumidity"];
+                const uv = data["uv"];
 
                 temp_display.innerHTML = `Temp: ${Math.round(avg_temp)}°C`
                 cloud_display.innerHTML = `Precip: ${chance_rain}%`
