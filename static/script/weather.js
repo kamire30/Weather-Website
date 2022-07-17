@@ -1,6 +1,6 @@
 document.getElementById("current-weather-btn").addEventListener("click", function(){current_forecast("forecast")});
 document.getElementById("forecast-weather-btn").addEventListener("click", function(){current_forecast("current")});
-document.getElementById("location-submit").addEventListener("click", function(){get_location()});
+document.getElementById("location-submit").addEventListener("click", get_location);
 document.getElementById("minus-1").addEventListener("click", function(){forecast_day_minus()});
 document.getElementById("plus-1").addEventListener("click", function(){forecast_day_add()});
 
