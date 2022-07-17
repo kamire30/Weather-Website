@@ -84,22 +84,19 @@ function change_temp_mode() {
 
 var btn_active = "current"
 function get_location() {
-    const key = "1a9bcc3b53b248b486d24649223006";
     const temp_display = document.getElementById("g1t");
     const cloud_display = document.getElementById("g2t");
     const humidity_display = document.getElementById("g3t");
     const uv_display = document.getElementById("g4t");
-
+    const enter_something = document.getElementById("enter-something");
+    const input_field = document.getElementById("location");
 
     if (btn_active == "current") {
-        const url = `https://api.weatherapi.com/v1/current.json?key=${key}&q=${document.getElementById("location").value}`;
         let lat;
         let lon;
 
-        fetch(url)
+        fetch(`/.netlify/functions/get_location?location=${document.getElementById("location").value}`)
             .then(res => {
-                const enter_something = document.getElementById("enter-something");
-                const input_field = document.getElementById("location")
                 if (res.ok) {
                     enter_something.innerHTML = "Collected Data";
                     enter_something.style.color = "green";
@@ -131,14 +128,12 @@ function get_location() {
             .then(x => location_grid(x))
     }
     else {
-        const days = parseInt(document.getElementById("days-counter").innerHTML) + 1
-        const url = `https://api.weatherapi.com/v1/forecast.json?key=${key}&days=${days}&q=${document.getElementById("location").value}`
+        const days = String(parseInt(document.getElementById("days-counter").innerHTML) + 1)
         
-        fetch(url)
-            .then(res => res.json())
-            .then(json_obj => {;
-                return json_obj;
-            })
+        fetch(`/.netlify/functions/get_forecast?days=${days}&location=${String(document.getElementById("location").value)}`)
+            .then(res => {
+                
+                return res.json()})
             .then(json_obj => {
                 data = json_obj["forecast"]["forecastday"][days-1]["day"];
                 const avg_temp = data["avgtemp_c"];
