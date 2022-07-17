@@ -155,10 +155,7 @@ function get_location() {
 }
 
 function get_air_quality(lat, lon) {
-    const key = "1fe4d6fcffb273c22daff0999d14ce8a"
-    const link = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${key}`
-     
-    fetch(link)
+    fetch(`/.netlify/functions/get_air_quality?lat=${lat}&lon=${lon}`)
         .then(res => res.json())
         .then(data => {
             let components = ["co", "o3", "no2"]
